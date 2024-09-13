@@ -119,9 +119,9 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 The `keycode` and `mods` args are the keycode and mods that were active with the
 last pressed key. The meaning of the return value from this function is:
 
-* `KC_NO` — do nothing (any predefined alternate key is not used);
-* `KC_TRNS` — use the default alternate key if it exists;
-* anything else — use the specified keycode. Any keycode may be returned
+* `KC_NO` - do nothing (any predefined alternate key is not used);
+* `KC_TRNS` - use the default alternate key if it exists;
+* anything else - use the specified keycode. Any keycode may be returned
   as an alternate key, including custom keycodes.
 
 Another example, defining `Shift`+`Tab` as the alternate of `Tab`, and vice versa:

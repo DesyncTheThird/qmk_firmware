@@ -15,7 +15,7 @@ Different keyboards have different ways to enter this special mode. If your PCB 
 * Press the physical `RESET` button, usually located on the underside of the PCB.
 * Locate header pins on the PCB labeled `RESET` and `GND`, and short them together while plugging your PCB in.
 
-If you've attempted all of the above to no avail, and the main chip on the board says `STM32` or `RP2-B1` on it, this may be a bit more complicated. Generally your best bet is to ask on [Discord](https://discord.gg/qmk) for assistance. It's likely some photos of the board will be asked for — if you can get them ready beforehand, it'll help move things along!
+If you've attempted all of the above to no avail, and the main chip on the board says `STM32` or `RP2-B1` on it, this may be a bit more complicated. Generally your best bet is to ask on [Discord](https://discord.gg/qmk) for assistance. It's likely some photos of the board will be asked for - if you can get them ready beforehand, it'll help move things along!
 
 Otherwise, you should see a message in yellow, similar to this in QMK Toolbox:
 
@@ -37,7 +37,7 @@ QMK Toolbox is not necessary for flashing [RP2040 devices](flashing#raspberry-pi
 
 ### Load the File into QMK Toolbox
 
-Begin by opening the QMK Toolbox application. You'll want to locate the firmware file in Finder or Explorer. Your keyboard firmware may be in one of two formats — `.hex` or `.bin`. QMK tries to copy the appropriate one for your keyboard into the root `qmk_firmware` directory.
+Begin by opening the QMK Toolbox application. You'll want to locate the firmware file in Finder or Explorer. Your keyboard firmware may be in one of two formats - `.hex` or `.bin`. QMK tries to copy the appropriate one for your keyboard into the root `qmk_firmware` directory.
 
 If you are on Windows or macOS, there are commands you can use to easily open the current folder in Explorer or Finder.
 

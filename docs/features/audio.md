@@ -13,7 +13,7 @@ AUDIO_ENABLE = yes
 ## AVR based boards
 On Atmega32U4 based boards, up to two simultaneous tones can be rendered with one speaker connected to a PWM capable pin on PORTC driven by timer 3 and the other on one of the PWM pins on PORTB driven by timer 1.
 
-The following pins can be configured as audio outputs in `config.h` — for one speaker set either one out of:
+The following pins can be configured as audio outputs in `config.h` - for one speaker set either one out of:
 
 * `#define AUDIO_PIN C4`
 * `#define AUDIO_PIN C5`
@@ -28,7 +28,7 @@ and *optionally*, for a second speaker, one of:
 * `#define AUDIO_PIN_ALT B7`
 
 ### Wiring
-Per speaker is — for example with a piezo buzzer — the black lead to ground, and the red lead connected to the selected `AUDIO_PIN` for the primary; and similarly with `AUDIO_PIN_ALT` for the secondary.
+Per speaker is - for example with a piezo buzzer - the black lead to ground, and the red lead connected to the selected `AUDIO_PIN` for the primary; and similarly with `AUDIO_PIN_ALT` for the secondary.
 
 
 ## ARM based boards
@@ -49,7 +49,7 @@ Do note though that the `dac_basic` driver is only capable of reproducing one to
 #### Wiring:
 For two piezos, for example configured as `AUDIO_PIN A4` and `AUDIO_PIN_ALT A5`, would be: red lead to A4 and black to ground, and similarly with the second one: red to A5, and black to ground.
 
-Another alternative is to drive *one* piezo with both DAC pins — for an extra "push" — wiring red to A4 and black to A5 (or the other way round), and adding `#define AUDIO_PIN_ALT_AS_NEGATIVE` to `config.h`.
+Another alternative is to drive *one* piezo with both DAC pins - for an extra "push" - wiring red to A4 and black to A5 (or the other way round), and adding `#define AUDIO_PIN_ALT_AS_NEGATIVE` to `config.h`.
 
 ##### Proton-C Example:
 The Proton-C comes (optionally) with one "built-in" piezo, which is wired to A4 and A5.
@@ -94,7 +94,7 @@ and in `config.h` add:
 #### Wiring
 The usual piezo wiring: red goes to the selected `AUDIO_PIN`; black goes to ground.
 
-*OR*, if you can choose to drive one piezo with two pins — for example `#define AUDIO_PIN B1`, `#define AUDIO_PIN_ALT B2` in `config.h`, with `#define AUDIO_PIN_ALT_AS_NEGATIVE` — then the red lead could go to B1, and the black to B2.
+*OR*, if you can choose to drive one piezo with two pins - for example `#define AUDIO_PIN B1`, `#define AUDIO_PIN_ALT B2` in `config.h`, with `#define AUDIO_PIN_ALT_AS_NEGATIVE` - then the red lead could go to B1, and the black to B2.
 
 ### PWM (hardware)
 STM32F1xx have to fall back to using PWM, but can do so in hardware; but again currently on only one speaker/pin.
@@ -152,7 +152,7 @@ You can override the default songs by doing something like this in your `config.
 #endif
 ```
 
-A full list of sounds can be found in [quantum/audio/song_list.h](https://github.com/qmk/qmk_firmware/blob/master/quantum/audio/song_list.h) — feel free to add your own to this list! All available notes can be seen in [quantum/audio/musical_notes.h](https://github.com/qmk/qmk_firmware/blob/master/quantum/audio/musical_notes.h).
+A full list of sounds can be found in [quantum/audio/song_list.h](https://github.com/qmk/qmk_firmware/blob/master/quantum/audio/song_list.h) - feel free to add your own to this list! All available notes can be seen in [quantum/audio/musical_notes.h](https://github.com/qmk/qmk_firmware/blob/master/quantum/audio/musical_notes.h).
 
 Additionally, if you wish to maintain your own list of songs (such as ones that may be copyrighted) and not have them added to the repo, you can create a `user_song_list.h` file and place it in your keymap (or userspace) folder. This file will be automatically included; it just needs to exist.
 
@@ -198,7 +198,7 @@ These keycodes turn all of the audio functionality on and off. Turning it off me
 |`AUDIO_INIT_DELAY`                | *Not defined*        |Enables delay during startup song to accomidate for USB startup issues                       |
 |`AUDIO_ENABLE_TONE_MULTIPLEXING`  | *Not defined*        |Enables time splicing/multiplexing to create multiple tones simutaneously                    |
 |`AUDIO_POWER_CONTROL_PIN`         | *Not defined*        |Enables power control code to enable or cut off power to speaker (such as with PAM8302 amp)  |
-|`AUDIO_POWER_CONTROL_PIN_ON_STATE`| `1`                  |The state of the audio power control pin when audio is "on" — `1` for high, `0` for low      |
+|`AUDIO_POWER_CONTROL_PIN_ON_STATE`| `1`                  |The state of the audio power control pin when audio is "on" - `1` for high, `0` for low      |
 |`STARTUP_SONG`                    | `STARTUP_SOUND`      |Plays when the keyboard starts up (audio.c)                                                  |
 |`GOODBYE_SONG`                    | `GOODBYE_SOUND`      |Plays when you press the QK_BOOT key (quantum.c)                                             |
 |`AG_NORM_SONG`                    | `AG_NORM_SOUND`      |Plays when you press AG_NORM (process_magic.c)                                               |
@@ -235,7 +235,7 @@ For ARM devices, you can adjust the DAC sample values. If your board is too loud
 ```
 The DAC usually runs in 12Bit mode, hence a volume of 100% = 4095U.
 
-Note: this only adjusts the volume aka "works" if you stick to `WAVEFORM_SQUARE`, since its samples are generated on the fly — any other waveform uses a hardcoded/precomputed sample-buffer.
+Note: this only adjusts the volume aka "works" if you stick to `WAVEFORM_SQUARE`, since its samples are generated on the fly - any other waveform uses a hardcoded/precomputed sample-buffer.
 
 ## Voices
 Aka "audio effects". Different ones can be enabled by setting these defines in `config.h`:
@@ -254,9 +254,9 @@ Keycodes available:
 
 ## Music Mode
 
-The music mode maps your columns to a chromatic scale and your rows to octaves. This works best with ortholinear keyboards, but can be made to work with others. All keycodes less than `0xFF` get blocked, so you won't type while playing notes — if you have special keys/mods, those will still work. A work-around for this is to jump to a different layer with `KC_NO`s before (or after) enabling music mode.
+The music mode maps your columns to a chromatic scale and your rows to octaves. This works best with ortholinear keyboards, but can be made to work with others. All keycodes less than `0xFF` get blocked, so you won't type while playing notes - if you have special keys/mods, those will still work. A work-around for this is to jump to a different layer with `KC_NO`s before (or after) enabling music mode.
 
-Recording is experimental due to some memory issues — if you experience some weird behavior, unplugging/replugging your keyboard will fix things.
+Recording is experimental due to some memory issues - if you experience some weird behavior, unplugging/replugging your keyboard will fix things.
 
 Keycodes available:
 
@@ -268,20 +268,20 @@ Keycodes available:
 |`QK_MUSIC_MODE_NEXT`     |`MU_NEXT`|Cycles through the music modes             |
 
 Available Modes:
-  * `CHROMATIC_MODE` — Chromatic scale, row changes the octave.
-  * `GUITAR_MODE` — Chromatic scale, but the row changes the string (+5 st).
-  * `VIOLIN_MODE` — Chromatic scale, but the row changes the string (+7 st).
-  * `MAJOR_MODE` — Major scale.
+  * `CHROMATIC_MODE` - Chromatic scale, row changes the octave.
+  * `GUITAR_MODE` - Chromatic scale, but the row changes the string (+5 st).
+  * `VIOLIN_MODE` - Chromatic scale, but the row changes the string (+7 st).
+  * `MAJOR_MODE` - Major scale.
 
 In music mode, the following keycodes work differently and don't pass through:
 
-* `LCTL` — start a recording.
-* `LALT` — stop recording/stop playing.
-* `LGUI` — play recording.
-* `KC_UP` — speed-up playback.
-* `KC_DOWN` — slow-down playback.
+* `LCTL` - start a recording.
+* `LALT` - stop recording/stop playing.
+* `LGUI` - play recording.
+* `KC_UP` - speed-up playback.
+* `KC_DOWN` - slow-down playback.
 
-The pitch standard (`PITCH_STANDARD_A`) is 440.0f by default — to change this, add something like this to your `config.h`:
+The pitch standard (`PITCH_STANDARD_A`) is 440.0f by default - to change this, add something like this to your `config.h`:
 
 ```c
 #define PITCH_STANDARD_A 432.0f
@@ -301,7 +301,7 @@ By default, `MUSIC_MASK` is set to `keycode < 0xFF`, which means keycodes less t
 #define MUSIC_MASK keycode != KC_NO
 ```
 
-The example will capture all keycodes — be careful, this will get you stuck in music mode until you restart your keyboard!
+The example will capture all keycodes - be careful, this will get you stuck in music mode until you restart your keyboard!
 
 For a more advanced way to control which keycodes should still be processed, you can use `music_mask_kb(keycode)` in `<keyboard>.c` and `music_mask_user(keycode)` in your `keymap.c`:
 

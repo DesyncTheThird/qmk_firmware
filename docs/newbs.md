@@ -2,7 +2,7 @@
 
 Your computer keyboard has a processor inside of it, similar to the one inside your computer. This processor runs software that is responsible for detecting button presses and informing the computer when keys are pressed. QMK Firmware fills the role of that software, detecting button presses and passing that information on to the host computer. When you build your custom keymap, you are creating an executable program for your keyboard.
 
-QMK tries to put a lot of power into your hands by making easy things easy, and hard things possible. You don't have to know how to program to create powerful keymaps — you only have to follow a few simple syntax rules.
+QMK tries to put a lot of power into your hands by making easy things easy, and hard things possible. You don't have to know how to program to create powerful keymaps - you only have to follow a few simple syntax rules.
 
 Not sure if your keyboard can run QMK? If it's a mechanical keyboard you built yourself, chances are good that it can. We support a [large number of hobbyist boards](https://qmk.fm/keyboards/). If your current keyboard can't run QMK, there are a lot of choices out there for boards that do.
 

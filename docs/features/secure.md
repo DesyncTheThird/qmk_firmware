@@ -51,6 +51,6 @@ SECURE_ENABLE = yes
 | `secure_is_unlocking()`   | Check if an unlock sequence is currently in progress                       |
 | `secure_is_unlocked()`    | Check if the device is currently unlocked                                  |
 | `secure_lock()`           | Lock down the device                                                       |
-| `secure_unlock()`         | Force unlock the device — bypasses user unlock sequence                    |
+| `secure_unlock()`         | Force unlock the device - bypasses user unlock sequence                    |
 | `secure_request_unlock()` | Begin listening for an unlock sequence                                     |
 | `secure_activity_event()` | Flag that user activity has happened and the device should remain unlocked |

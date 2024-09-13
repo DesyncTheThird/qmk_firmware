@@ -44,7 +44,7 @@ It's highly recommended that you use `<name>.c` as the default source file to be
 SRC += <name>.c
 ```
 
-Additional files may be added in the same way — it's recommended you have one named `<name>.c`/`.h` to start off with, though. 
+Additional files may be added in the same way - it's recommended you have one named `<name>.c`/`.h` to start off with, though. 
 
 The `/users/<name>/rules.mk` file will be included in the build _after_ the `rules.mk` from your keymap. This allows you to have features in your userspace `rules.mk` that depend on individual QMK features that may or may not be available on a specific keyboard. 
 

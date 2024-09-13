@@ -183,7 +183,7 @@ Flashing sequence:
 
 1. Enter the bootloader using any of the following methods:
     * Tap the `QK_BOOT` keycode;
-    * Hold the salt key while plugging the keyboard in — for PS2AVRGB boards, this is usually the key connected to MCU pins A0 and B0; otherwise it will be documented in your keyboard's README.
+    * Hold the salt key while plugging the keyboard in - for PS2AVRGB boards, this is usually the key connected to MCU pins A0 and B0; otherwise it will be documented in your keyboard's README.
 2. Wait for the OS to detect the device.
 3. Flash a .hex file.
 4. Reset the device into application mode (may be done automatically).
@@ -236,7 +236,7 @@ Flashing sequence:
 
 ## STM32/APM32 DFU
 
-All USB-capable STM32 and APM32 MCUs, except for a small handful (such as STM32F103 — see the [STM32duino section](#stm32duino)) come preloaded with a factory bootloader that cannot be modified nor deleted.
+All USB-capable STM32 and APM32 MCUs, except for a small handful (such as STM32F103 - see the [STM32duino section](#stm32duino)) come preloaded with a factory bootloader that cannot be modified nor deleted.
 
 To ensure compatibility with the STM32-DFU bootloader, make sure this block is present in your `rules.mk` (optionally with `apm32-dfu` instead):
 

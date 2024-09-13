@@ -4,7 +4,7 @@ These resources are aimed at giving new members in the QMK community more unders
 
 ### QMK resources
 
-* [Thomas Baart's QMK Basics Blog](https://thomasbaart.nl/category/mechanical-keyboards/firmware/qmk/qmk-basics/) — A user-created blog covering the basics of how to use QMK Firmware, as seen from a new user's perspective.
+* [Thomas Baart's QMK Basics Blog](https://thomasbaart.nl/category/mechanical-keyboards/firmware/qmk/qmk-basics/) - A user-created blog covering the basics of how to use QMK Firmware, as seen from a new user's perspective.
 
 ### Command Line resources
 

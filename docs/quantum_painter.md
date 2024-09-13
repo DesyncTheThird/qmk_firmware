@@ -197,7 +197,7 @@ Writing /home/qmk/qmk_firmware/keyboards/my_keeb/generated/noto11.qff.c...
 
 ===== LCD
 
-Most TFT display panels use a 5-pin interface — SPI SCK, SPI MOSI, SPI CS, D/C, and RST pins.
+Most TFT display panels use a 5-pin interface - SPI SCK, SPI MOSI, SPI CS, D/C, and RST pins.
 
 For these displays, QMK's `spi_master` must already be correctly configured for the platform you're building for.
 
@@ -399,14 +399,14 @@ The maximum number of displays can be configured by changing the following in yo
 Native color format rgb565 is compatible with ST7789
 
 ::: warning
-Some ST7789 devices are known to have different drawing offsets — despite being a 240x320 pixel display controller internally, some display panels are only 240x240 or smaller. These may require an offset to be applied; see `qp_set_viewport_offsets` above for information on how to override the offsets if they aren't correctly rendered.
+Some ST7789 devices are known to have different drawing offsets - despite being a 240x320 pixel display controller internally, some display panels are only 240x240 or smaller. These may require an offset to be applied; see `qp_set_viewport_offsets` above for information on how to override the offsets if they aren't correctly rendered.
 :::
 
 :::::
 
 ===== OLED
 
-OLED displays tend to use 5-pin SPI when at larger resolutions, or when using color — SPI SCK, SPI MOSI, SPI CS, D/C, and RST pins. Smaller OLEDs may use I2C instead.
+OLED displays tend to use 5-pin SPI when at larger resolutions, or when using color - SPI SCK, SPI MOSI, SPI CS, D/C, and RST pins. Smaller OLEDs may use I2C instead.
 
 When using these displays, either `spi_master` or `i2c_master` must already be correctly configured for both the platform and panel you're building for.
 
@@ -482,7 +482,7 @@ SSD1306 and SH1106 are almost entirely identical, to the point of being indising
 
 ===== Surface
 
-Quantum Painter has a surface driver which is able to target a buffer in RAM. In general, surfaces keep track of the "dirty" region — the area that has been drawn to since the last flush — so that, when transferring to the display, they can transfer the minimal amount of data to achieve the end result.
+Quantum Painter has a surface driver which is able to target a buffer in RAM. In general, surfaces keep track of the "dirty" region - the area that has been drawn to since the last flush - so that, when transferring to the display, they can transfer the minimal amount of data to achieve the end result.
 
 ::: warning
 These generally require significant amounts of RAM, so at large sizes and/or higher bit depths, they may not be usable on all MCUs.
@@ -538,7 +538,7 @@ To transfer the contents of the surface to another display of the same pixel for
 bool qp_surface_draw(painter_device_t surface, painter_device_t display, uint16_t x, uint16_t y, bool entire_surface);
 ```
 
-The `surface` is the surface to copy out from. The `display` is the target display to draw into. `x` and `y` are the target location to draw the surface pixel data. Under normal circumstances, the location should be consistent, as the dirty region is calculated with respect to the `x` and `y` coordinates — changing those will result in partial, overlapping draws. `entire_surface` whether the entire surface should be drawn, instead of just the dirty region.
+The `surface` is the surface to copy out from. The `display` is the target display to draw into. `x` and `y` are the target location to draw the surface pixel data. Under normal circumstances, the location should be consistent, as the dirty region is calculated with respect to the `x` and `y` coordinates - changing those will result in partial, overlapping draws. `entire_surface` whether the entire surface should be drawn, instead of just the dirty region.
 
 ::: warning
 The surface and display panel must have the same native pixel format.
@@ -552,7 +552,7 @@ Calling `qp_flush()` on the surface resets its dirty region. Copying the surface
 
 ## Quantum Painter Drawing API {#quantum-painter-api}
 
-All APIs require a `painter_device_t` object as their first parameter — this object comes from the specific device initialisation, and instructions on creating it can be found in each driver's respective section.
+All APIs require a `painter_device_t` object as their first parameter - this object comes from the specific device initialisation, and instructions on creating it can be found in each driver's respective section.
 
 To use any of the APIs, you need to include `qp.h`:
 ```c
@@ -563,7 +563,7 @@ To use any of the APIs, you need to include `qp.h`:
 
 ===== General Notes
 
-The coordinate system used in Quantum Painter generally accepts `left`, `top`, `right`, and `bottom` instead of x/y/width/height, and each coordinate is inclusive of where pixels should be drawn. This is required as some datatypes used by display panels have a maximum value of `255` — for any value or geometry extent that matches `256`, this would be represented as a `0`, instead.
+The coordinate system used in Quantum Painter generally accepts `left`, `top`, `right`, and `bottom` instead of x/y/width/height, and each coordinate is inclusive of where pixels should be drawn. This is required as some datatypes used by display panels have a maximum value of `255` - for any value or geometry extent that matches `256`, this would be represented as a `0`, instead.
 
 ::: tip
 Drawing a horizontal line 8 pixels long, starting from 4 pixels inside the left side of the display, will need `left=4`, `right=11`.
@@ -649,7 +649,7 @@ bool qp_flush(painter_device_t device);
 The `qp_flush` function ensures that all drawing operations are "pushed" to the display. This should be done as the last operation whenever a sequence of draws occur to guarantee that any changes are applied.
 
 ::: warning
-Some display panels may seem to work even without a call to `qp_flush` — this may be because the driver cannot queue drawing operations and needs to display them immediately when invoked. In general, calling `qp_flush` at the end is still considered "best practice".
+Some display panels may seem to work even without a call to `qp_flush` - this may be because the driver cannot queue drawing operations and needs to display them immediately when invoked. In general, calling `qp_flush` at the end is still considered "best practice".
 :::
 
 ```c

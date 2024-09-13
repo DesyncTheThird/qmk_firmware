@@ -1,6 +1,6 @@
 # Caps Word
 
-It is often useful to type a single word in all capitals — for instance, in
+It is often useful to type a single word in all capitals - for instance, in
 abbreviations like "QMK"; or in code, identifiers like `KC_SPC`. "Caps Word" is
 a modern alternative to Caps Lock:
 

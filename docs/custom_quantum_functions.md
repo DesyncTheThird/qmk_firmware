@@ -14,7 +14,7 @@ We have structured QMK as a hierarchy:
 
 Each of the functions described below can be defined with a `_kb()` suffix or a `_user()` suffix. We intend for you to use the `_kb()` suffix at the Keyboard/Revision level, while the `_user()` suffix should be used at the Keymap level.
 
-When defining functions at the Keyboard/Revision level, it is important that your `_kb()` implementation call `_user()` before executing anything else — otherwise the keymap level function will never be called.
+When defining functions at the Keyboard/Revision level, it is important that your `_kb()` implementation call `_user()` before executing anything else - otherwise the keymap level function will never be called.
 
 # Custom Keycodes
 
@@ -361,7 +361,7 @@ The first argument `trigger_time` is the intended time of execution. If other de
 
 The second argument `cb_arg` is the same argument passed into `defer_exec()` below, and can be used to access state information from the original call context.
 
-The return value is the number of milliseconds to use if the function should be repeated — if the callback returns `0` then it's automatically unregistered. In the example above, a hypothetical `my_deferred_functionality()` is invoked to determine if the callback needs to be repeated — if it does, it reschedules for a `500` millisecond delay, otherwise it informs the deferred execution background task that it's done, by returning `0`.
+The return value is the number of milliseconds to use if the function should be repeated - if the callback returns `0` then it's automatically unregistered. In the example above, a hypothetical `my_deferred_functionality()` is invoked to determine if the callback needs to be repeated - if it does, it reschedules for a `500` millisecond delay, otherwise it informs the deferred execution background task that it's done, by returning `0`.
 
 ::: tip
 Note that the returned delay will be applied to the intended trigger time, and not the time of callback invocation. This allows for generally consistent timing even in the face of the occasional late execution.
@@ -375,11 +375,11 @@ Once a callback has been defined, it can be scheduled using the following API:
 deferred_token my_token = defer_exec(1500, my_callback, NULL);
 ```
 
-The first argument is the number of milliseconds to wait until executing `my_callback` — in the case above, `1500` milliseconds, or 1.5 seconds.
+The first argument is the number of milliseconds to wait until executing `my_callback` - in the case above, `1500` milliseconds, or 1.5 seconds.
 
-The third parameter is the `cb_arg` that gets passed to the callback at the point of execution. This value needs to be valid at the time the callback is invoked — a local function value will be destroyed before the callback is executed and should not be used. If this is not required, `NULL` should be used.
+The third parameter is the `cb_arg` that gets passed to the callback at the point of execution. This value needs to be valid at the time the callback is invoked - a local function value will be destroyed before the callback is executed and should not be used. If this is not required, `NULL` should be used.
 
-The return value is a `deferred_token` that can consequently be used to cancel the deferred executor callback before it's invoked. If a failure occurs, the returned value will be `INVALID_DEFERRED_TOKEN`. Usually, this will be as a result of supplying `0` to the delay or a `NULL` for the callback. The other failure case is if there are too many deferred executions "in flight" — this can be increased by changing the limit, described below.
+The return value is a `deferred_token` that can consequently be used to cancel the deferred executor callback before it's invoked. If a failure occurs, the returned value will be `INVALID_DEFERRED_TOKEN`. Usually, this will be as a result of supplying `0` to the delay or a `NULL` for the callback. The other failure case is if there are too many deferred executions "in flight" - this can be increased by changing the limit, described below.
 
 ## Extending a deferred execution
 

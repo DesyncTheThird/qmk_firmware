@@ -2,7 +2,7 @@
 
 The Raw HID feature allows for bidirectional communication between QMK and the host computer over an HID interface. This has many potential use cases, such as switching keymaps on the fly or sending useful metrics like CPU/RAM usage.
 
-In order to communicate with the keyboard using this feature, you will need to write a program that runs on the host. As such, some basic programming skills are required — more if you intend to implement complex behaviour.
+In order to communicate with the keyboard using this feature, you will need to write a program that runs on the host. As such, some basic programming skills are required - more if you intend to implement complex behaviour.
 
 ## Usage {#usage}
 

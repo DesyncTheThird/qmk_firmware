@@ -52,7 +52,7 @@ Hover your mouse over a key and a short blurb will tell you what that keycode do
 * [Advanced Keycode Reference](feature_advanced_keycodes)
 
 ::: warning
-If your selected layout doesn't match your physical build, leave the unused keys blank. If you're not sure which key is in use — for example, you have one backspace key but `LAYOUT_all` has two keys — then put the same keycode in both locations.
+If your selected layout doesn't match your physical build, leave the unused keys blank. If you're not sure which key is in use - for example, you have one backspace key but `LAYOUT_all` has two keys - then put the same keycode in both locations.
 :::
 
 ## Step 5: Save Your Keymap for Future Changes

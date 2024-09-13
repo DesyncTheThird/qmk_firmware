@@ -29,7 +29,7 @@ enum {
 ::: tip
 Note that it takes some time after firmware is booted to detect the OS.
 :::
-This time is quite short — probably in the hundreds of milliseconds — but this data may be not ready in keyboard and layout setup functions which run very early during firmware startup.
+This time is quite short - probably in the hundreds of milliseconds - but this data may be not ready in keyboard and layout setup functions which run very early during firmware startup.
 
 ## Callbacks {#callbacks}
 

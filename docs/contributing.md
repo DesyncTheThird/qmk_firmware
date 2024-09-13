@@ -135,10 +135,10 @@ Feature and Bug Fix PRs affect all keyboards. We are also in the process of rest
 
 Here are some things to keep in mind when working on your feature or bug fix.
 
-* **Disabled by default** — memory is a pretty limited resource on most chips that QMK supports, and it's important that current keymaps aren't broken, so please allow your feature to be turned **on**, rather than being turned off. If you think it should be on by default, or reduces the size of the code, please talk with us about it.
-* **Compile locally before submitting** — hopefully this one is obvious, but things need to compile! You should always make sure your changes compile before opening a pull request.
-* **Consider revisions and different chip-bases** — there are several keyboards that have revisions that allow for slightly different configurations, and even different chip-bases. Try to make a feature supported in ARM and AVR, or is automatically disabled on platforms it doesn't work on.
-* **Explain your feature** — Document it in `docs/`, either as a new file or as part of an existing file. If you don't document it, other people won't be able to benefit from your hard work.
+* **Disabled by default** - memory is a pretty limited resource on most chips that QMK supports, and it's important that current keymaps aren't broken, so please allow your feature to be turned **on**, rather than being turned off. If you think it should be on by default, or reduces the size of the code, please talk with us about it.
+* **Compile locally before submitting** - hopefully this one is obvious, but things need to compile! You should always make sure your changes compile before opening a pull request.
+* **Consider revisions and different chip-bases** - there are several keyboards that have revisions that allow for slightly different configurations, and even different chip-bases. Try to make a feature supported in ARM and AVR, or is automatically disabled on platforms it doesn't work on.
+* **Explain your feature** - Document it in `docs/`, either as a new file or as part of an existing file. If you don't document it, other people won't be able to benefit from your hard work.
 
 We also ask that you follow these guidelines:
 

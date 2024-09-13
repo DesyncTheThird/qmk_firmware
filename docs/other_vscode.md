@@ -92,11 +92,11 @@ No, really, that's it. The paths needed are already included when installing the
 
 There are a number of extensions that you may want to install:
 
-* [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) — This installs a bunch of Git-related tools that may make using Git with QMK Firmware easier.
-* [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) — _[Optional]_ —  This is the language server for C/C++ that VS Code uses.  It provides IntelliSense and other features.
-* [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) — _[Optional]_ —  Helps to keep the code to the QMK Coding Conventions.
-* [GitHub Markdown Preview](https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview) — _[Optional]_ — Makes the markdown preview in VS Code more like GitHub's.
-* [VS Live Share Extension Pack](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) — _[Optional]_ — This extension allows somebody else to access your workspace (or you to access somebody else's workspace) and help out.  This is great if you're having issues and need some help from somebody.
+* [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) - This installs a bunch of Git-related tools that may make using Git with QMK Firmware easier.
+* [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) - _[Optional]_ -  This is the language server for C/C++ that VS Code uses.  It provides IntelliSense and other features.
+* [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) - _[Optional]_ -  Helps to keep the code to the QMK Coding Conventions.
+* [GitHub Markdown Preview](https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview) - _[Optional]_ - Makes the markdown preview in VS Code more like GitHub's.
+* [VS Live Share Extension Pack](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - _[Optional]_ - This extension allows somebody else to access your workspace (or you to access somebody else's workspace) and help out.  This is great if you're having issues and need some help from somebody.
 
 Restart once you've installed any extensions.
 
@@ -164,18 +164,18 @@ A debugging target for the MCU for your board needs to be defined, and can be do
 You'll need to perform some modifications to the file above in order to target your specific device:
 
 * `"name"`: Can be anything, but if you're debugging multiple targets you'll want something descriptive here.
-* `"cwd"`: The path to the QMK Firmware repository root directory — _if using the `.vscode` directory existing in the `qmk_firmware` git repository, the default above should be correct_.
-* `"executable"`: The path to the `elf` file generated as part of the build for your keyboard — _exists in `<qmk_firmware>/.build`_.
-* `"BMPGDBSerialPort"`: The `COM` port under Windows, or the `/dev/...` path for Linux/macOS. Two serial port devices will be created — the Black Magic Probe debug port is *usually* the first. If it doesn't work, try the second.
-* `"svdFile"`: _[Optional]_ The path to the SVD file that defines the register layout for the MCU — the appropriate file can be downloaded from the [cmsis-svd repository](https://github.com/posborne/cmsis-svd/tree/master/data/STMicro).
+* `"cwd"`: The path to the QMK Firmware repository root directory - _if using the `.vscode` directory existing in the `qmk_firmware` git repository, the default above should be correct_.
+* `"executable"`: The path to the `elf` file generated as part of the build for your keyboard - _exists in `<qmk_firmware>/.build`_.
+* `"BMPGDBSerialPort"`: The `COM` port under Windows, or the `/dev/...` path for Linux/macOS. Two serial port devices will be created - the Black Magic Probe debug port is *usually* the first. If it doesn't work, try the second.
+* `"svdFile"`: _[Optional]_ The path to the SVD file that defines the register layout for the MCU - the appropriate file can be downloaded from the [cmsis-svd repository](https://github.com/posborne/cmsis-svd/tree/master/data/STMicro).
 * `"device"`: The name of the MCU, which matches the `<name>` tag at the top of the downloaded `svd` file.
-* `"armToolchainPath"`: _[Optional]_ The path to the ARM toolchain installation location on Windows — under normal circumstances, Linux/macOS will auto-detect this correctly and will not need to be specified.
+* `"armToolchainPath"`: _[Optional]_ The path to the ARM toolchain installation location on Windows - under normal circumstances, Linux/macOS will auto-detect this correctly and will not need to be specified.
 
 ::: warning
 Windows builds of QMK Firmware are generally compiled using QMK MSYS, and the path to gdb's location (`C:\\QMK_MSYS\\mingw64\\bin`) needs to be specified under `armToolchainPath` for it to be detected. You may also need to change the GDB path to point at `C:\\QMK_MSYS\\mingw64\\bin\\gdb-multiarch.exe` in the VSCode Cortex-Debug user settings: ![VSCode Settings](https://i.imgur.com/EGrPM1L.png)
 :::
 
-Optionally, the following modifications should also be made to the keyboard's `rules.mk` file to disable optimisations — not strictly required but will ensure breakpoints and variable viewing works correctly:
+Optionally, the following modifications should also be made to the keyboard's `rules.mk` file to disable optimisations - not strictly required but will ensure breakpoints and variable viewing works correctly:
 ```makefile
 # Disable optimisations for debugging purposes
 LTO_ENABLE = no

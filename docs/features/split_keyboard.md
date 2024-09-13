@@ -1,6 +1,6 @@
 # Split Keyboard 
 
-Many keyboards in the QMK Firmware repo are "split" keyboards. They use two controllers — one plugging into USB, and the second connected by a serial or an I<sup>2</sup>C connection over a TRRS or similar cable. 
+Many keyboards in the QMK Firmware repo are "split" keyboards. They use two controllers - one plugging into USB, and the second connected by a serial or an I<sup>2</sup>C connection over a TRRS or similar cable. 
 
 Split keyboards can have a lot of benefits, but there is some additional work needed to get them enabled.  
 
@@ -43,7 +43,7 @@ If you want to use I<sup>2</sup>C to communicate between halves, you will need a
 
 The most commonly used connection is a TRRS cable and jacks.  These provide 4 wires, making them very useful for split keyboards, and are easy to find. 
 
-However, since one of the wires carries VCC, this means that the boards are not hot pluggable. You should always disconnect the board from USB before unplugging and plugging in TRRS cables, or you can short the controller — or worse.
+However, since one of the wires carries VCC, this means that the boards are not hot pluggable. You should always disconnect the board from USB before unplugging and plugging in TRRS cables, or you can short the controller - or worse.
 
 Another option is to use phone cables (as in, old school RJ-11/RJ-14 cables). Make sure that you use one that actually supports 4 wires/lanes.  
 
@@ -359,7 +359,7 @@ void keyboard_post_init_user(void) {
 }
 ```
 
-The master side can then invoke the slave-side handler — for normal keyboard functionality to be minimally affected, any keyboard- or user-level code attempting to sync data should be throttled:
+The master side can then invoke the slave-side handler - for normal keyboard functionality to be minimally affected, any keyboard- or user-level code attempting to sync data should be throttled:
 
 ```c
 void housekeeping_task_user(void) {

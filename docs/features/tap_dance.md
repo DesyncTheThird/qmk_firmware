@@ -2,7 +2,7 @@
 
 ## Introduction {#introduction}
 
-Hit the semicolon key once, send a semicolon. Hit it twice, rapidly — send a colon. Hit it three times, and your keyboard's LEDs do a wild dance. That's just one example of what Tap Dance can do. It's one of the nicest community-contributed features in the firmware, conceived and created by [algernon](https://github.com/algernon) in [#451](https://github.com/qmk/qmk_firmware/pull/451). Here's how algernon describes the feature:
+Hit the semicolon key once, send a semicolon. Hit it twice, rapidly - send a colon. Hit it three times, and your keyboard's LEDs do a wild dance. That's just one example of what Tap Dance can do. It's one of the nicest community-contributed features in the firmware, conceived and created by [algernon](https://github.com/algernon) in [#451](https://github.com/qmk/qmk_firmware/pull/451). Here's how algernon describes the feature:
 
 With this feature one can specify keys that behave differently, based on the amount of times they have been tapped, and when interrupted, they get handled before the interrupter.
 
@@ -28,8 +28,8 @@ After this, you'll want to use the `tap_dance_actions` array to specify what act
 * `ACTION_TAP_DANCE_DOUBLE(kc1, kc2)`: sends the `kc1` keycode when tapped once, `kc2` otherwise. When the key is held, the appropriate keycode is registered: `kc1` when pressed and held, `kc2` when tapped once, then pressed and held.
 * `ACTION_TAP_DANCE_LAYER_MOVE(kc, layer)`: Sends the `kc` keycode when tapped once, or moves to `layer`. (This functions like the `TO` layer keycode.)
 * `ACTION_TAP_DANCE_LAYER_TOGGLE(kc, layer)`: Sends the `kc` keycode when tapped once, or toggles the state of `layer`. (This functions like the `TG` layer keycode.)
-* `ACTION_TAP_DANCE_FN(fn)`: Calls the specified function — defined in the user keymap — with the final tap count of the Tap Dance action.
-* `ACTION_TAP_DANCE_FN_ADVANCED(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn)`: Calls the first specified function — defined in the user keymap — on every tap, the second function when the dance action finishes (like the previous option), and the last function when the Tap Dance action resets.
+* `ACTION_TAP_DANCE_FN(fn)`: Calls the specified function - defined in the user keymap - with the final tap count of the Tap Dance action.
+* `ACTION_TAP_DANCE_FN_ADVANCED(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn)`: Calls the first specified function - defined in the user keymap - on every tap, the second function when the dance action finishes (like the previous option), and the last function when the Tap Dance action resets.
 * `ACTION_TAP_DANCE_FN_ADVANCED_WITH_RELEASE(on_each_tap_fn, on_each_release_fn, on_dance_finished_fn, on_dance_reset_fn)`: This macro is identical to `ACTION_TAP_DANCE_FN_ADVANCED`, apart from the addition of `on_each_release_fn` which is invoked every time the key for the Tap Dance is released. It is worth noting that `on_each_release_fn` will still be called even when the key is released after the dance finishes (e.g. if the key is released after being pressed and held for longer than the `TAPPING_TERM`).
 
 The first option is enough for a lot of cases that just want dual roles. For example, `ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT)` will result in `Space` being sent on single-tap, and `Enter` otherwise.
@@ -368,7 +368,7 @@ In this configuration "hold" takes place **after** Tap Dance timeout. To achieve
 
 #### Example 5: Using Tap Dance for advanced Mod-Tap and Layer-Tap keys {#example-5}
 
-Tap Dance can be used to emulate `MT()` and `LT()` behavior when the tapped code is not a basic keycode. This is useful to send tapped keycodes that normally require `Shift`, such as parentheses or curly braces — or other modified keycodes, such as `Ctrl`+`X`.
+Tap Dance can be used to emulate `MT()` and `LT()` behavior when the tapped code is not a basic keycode. This is useful to send tapped keycodes that normally require `Shift`, such as parentheses or curly braces - or other modified keycodes, such as `Ctrl`+`X`.
 
 Below your layers and custom keycodes, add the following:
 
@@ -566,6 +566,6 @@ The use of `cur_dance()` and `ql_tap_state` mirrors the above examples.
 
 The `case: TD_SINGLE_TAP` in `ql_finished` is similar to the above examples. The `TD_SINGLE_HOLD` case works in conjunction with `ql_reset()` to switch to `_MY_LAYER` while the Tap Dance key is held, and to switch away from `_MY_LAYER` when the key is released, mirroring the functionality of `MO(_MY_LAYER)`. The `TD_DOUBLE_TAP` case works by checking whether `_MY_LAYER` is the active layer, and toggling it on or off accordingly, mirroring the functionality of `TG(_MY_LAYER)`.
 
-`tap_dance_actions[]` works similarly to the above examples. Note that, additionally, I set a longer tapping term for the Tap Dance keys. This is because I like my `TAPPING_TERM` to be short (\~175ms) for my non-Tap-Dance keys, but find that this is too quick for me to reliably complete Tap Dance actions — thus the increased time of 275ms here. In order for the per-key tapping terms to take effect, `TAPPING_TERM_PER_KEY` must be defined in your `config.h`.
+`tap_dance_actions[]` works similarly to the above examples. Note that, additionally, I set a longer tapping term for the Tap Dance keys. This is because I like my `TAPPING_TERM` to be short (\~175ms) for my non-Tap-Dance keys, but find that this is too quick for me to reliably complete Tap Dance actions - thus the increased time of 275ms here. In order for the per-key tapping terms to take effect, `TAPPING_TERM_PER_KEY` must be defined in your `config.h`.
 
 Finally, to get this Tap Dance key working, be sure to include `TD(QUOT_LAYR)` in your `keymaps[]`.

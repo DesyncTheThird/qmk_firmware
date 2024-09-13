@@ -5,7 +5,7 @@ The Send String API is part of QMK's macro system. It allows for sequences of ke
 The full ASCII character set is supported, along with all of the keycodes in the [Basic Keycode range](../keycodes_basic) (as these are the only ones that will actually be sent to the host).
 
 ::: tip
-Unicode characters are **not** supported with this API — see the [Unicode](unicode) feature instead.
+Unicode characters are **not** supported with this API - see the [Unicode](unicode) feature instead.
 :::
 
 ## Usage {#usage}

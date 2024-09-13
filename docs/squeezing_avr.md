@@ -9,7 +9,7 @@ First and foremost is enabling link time optimization. To do so, add this to you
 ```make
 LTO_ENABLE = yes
 ```
-This will cause the final step to take longer, but should get you a smaller compiled size. This also disables Action Functions and Action Macros — both of which are deprecated.
+This will cause the final step to take longer, but should get you a smaller compiled size. This also disables Action Functions and Action Macros - both of which are deprecated.
 This will get you the most savings, in most situations.
 
 From there, disabling extraneous systems will help, e.g.: 
@@ -34,7 +34,7 @@ If you use `sprintf` or `snprintf` functions you can save around ~400 bytes by e
 AVR_USE_MINIMAL_PRINTF = yes
 ```
 
-This will include smaller implementations from AVR-LibC into your firmware. They are [not fully featured](https://www.nongnu.org/avr-libc/user-manual/group__avr__stdio.html#gaa3b98c0d17b35642c0f3e4649092b9f1) — for instance, zero padding and field width specifiers are not supported. So, if you use `sprintf` or `snprintf` like this:
+This will include smaller implementations from AVR-LibC into your firmware. They are [not fully featured](https://www.nongnu.org/avr-libc/user-manual/group__avr__stdio.html#gaa3b98c0d17b35642c0f3e4649092b9f1) - for instance, zero padding and field width specifiers are not supported. So, if you use `sprintf` or `snprintf` like this:
 ```c
 sprintf(wpm_str, "%03d", get_current_wpm());
 snprintf(keylog_str, sizeof(keylog_str), "%dx%d, k%2d : %c");
@@ -74,7 +74,7 @@ MUSIC_ENABLE = no
 
 There are also some options for layers that can reduce the firmware size. All of these settings are for your `config.h`.
 
-You can limit the number of layers that the firmware uses — if you're using up to 8 layers in total, set:
+You can limit the number of layers that the firmware uses - if you're using up to 8 layers in total, set:
 ```c
 #define LAYER_STATE_8BIT
 ```
@@ -134,7 +134,7 @@ which outputs `WPM: 005`.
 
 ## RGB Settings
 
-If you're using RGB on your board, both RGB Light (Underglow) and RGB Matrix (per key RGB) now require defines to enable different animations — some keyboards enable a lot of animations by default so you can generally gain back some space by disabling specific animations if you don't use them. For RGB Light, you can disable these in your keymap's `config.h`:
+If you're using RGB on your board, both RGB Light (Underglow) and RGB Matrix (per key RGB) now require defines to enable different animations - some keyboards enable a lot of animations by default so you can generally gain back some space by disabling specific animations if you don't use them. For RGB Light, you can disable these in your keymap's `config.h`:
 ```c
 #undef RGBLIGHT_ANIMATIONS
 #undef RGBLIGHT_EFFECT_BREATHING

@@ -1,6 +1,6 @@
 # Pointing Device {#pointing-device}
 
-Pointing Device is a generic name for a feature intended to be generic: moving the system pointer around.  There are certainly other options for it — like mousekeys — but this aims to be easily modifiable and hardware driven. You can implement custom keys to control functionality, or you can gather information from other peripherals and insert it directly here — let QMK handle the processing for you.
+Pointing Device is a generic name for a feature intended to be generic: moving the system pointer around.  There are certainly other options for it - like mousekeys - but this aims to be easily modifiable and hardware driven. You can implement custom keys to control functionality, or you can gather information from other peripherals and insert it directly here - let QMK handle the processing for you.
 
 To enable Pointing Device, add the following line in your `rules.mk` and specify one of the driver options below:
 
@@ -424,9 +424,9 @@ The following configuration options are only available when using `SPLIT_POINTIN
 
 | Setting                              | Description                                                                                           | Default       |
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------- | ------------- |
-| `POINTING_DEVICE_LEFT`               | Pointing device on the left side. (Required — pick one only)                                           | _not defined_ |
-| `POINTING_DEVICE_RIGHT`              | Pointing device on the right side. (Required — pick one only)                                          | _not defined_ |
-| `POINTING_DEVICE_COMBINED`           | Pointing device on both sides. (Required — pick one only)                                              | _not defined_ |
+| `POINTING_DEVICE_LEFT`               | Pointing device on the left side. (Required - pick one only)                                           | _not defined_ |
+| `POINTING_DEVICE_RIGHT`              | Pointing device on the right side. (Required - pick one only)                                          | _not defined_ |
+| `POINTING_DEVICE_COMBINED`           | Pointing device on both sides. (Required - pick one only)                                              | _not defined_ |
 | `POINTING_DEVICE_ROTATION_90_RIGHT`  | (Optional) Rotates the X and Y data by  90 degrees.                                                   | _not defined_ |
 | `POINTING_DEVICE_ROTATION_180_RIGHT` | (Optional) Rotates the X and Y data by 180 degrees.                                                   | _not defined_ |
 | `POINTING_DEVICE_ROTATION_270_RIGHT` | (Optional) Rotates the X and Y data by 270 degrees.                                                   | _not defined_ |
@@ -474,17 +474,17 @@ The combined functions below are only available when using `SPLIT_POINTING_ENABL
 
 The report_mouse_t (here "mouseReport") has the following properties:
 
-* `mouseReport.x` — this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing movement (+ to the right, - to the left) on the x axis.
-* `mouseReport.y` — this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing movement (+ upward, - downward) on the y axis.
-* `mouseReport.v` — this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing vertical scrolling (+ upward, - downward).
-* `mouseReport.h` — this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing horizontal scrolling (+ right, - left).
-* `mouseReport.buttons` — this is a uint8_t in which all 8 bits are used.  These bits represent the mouse button state — bit 0 is mouse button 1, and bit 7 is mouse button 8.
+* `mouseReport.x` - this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing movement (+ to the right, - to the left) on the x axis.
+* `mouseReport.y` - this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing movement (+ upward, - downward) on the y axis.
+* `mouseReport.v` - this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing vertical scrolling (+ upward, - downward).
+* `mouseReport.h` - this is a signed int from -127 to 127 (not 128, this is defined in USB HID spec) representing horizontal scrolling (+ right, - left).
+* `mouseReport.buttons` - this is a uint8_t in which all 8 bits are used.  These bits represent the mouse button state - bit 0 is mouse button 1, and bit 7 is mouse button 8.
 
 To manually manipulate the mouse reports outside of the `pointing_device_task_*` functions, you can use:
 
-* `pointing_device_get_report()` — Returns the current report_mouse_t that represents the information sent to the host computer
-* `pointing_device_set_report(report_mouse_t mouse_report)` — Overrides and saves the report_mouse_t to be sent to the host computer
-* `pointing_device_send()` — Sends the mouse report to the host and zeroes out the report. 
+* `pointing_device_get_report()` - Returns the current report_mouse_t that represents the information sent to the host computer
+* `pointing_device_set_report(report_mouse_t mouse_report)` - Overrides and saves the report_mouse_t to be sent to the host computer
+* `pointing_device_send()` - Sends the mouse report to the host and zeroes out the report. 
 
 When the mouse report is sent, the x, y, v, and h values are set to 0 (this is done in `pointing_device_send()`, which can be overridden to avoid this behavior). This way, button states persist, but movement will only occur once. For further customization, both `pointing_device_init` and `pointing_device_task` can be overridden.
 
@@ -496,7 +496,7 @@ Also, you use the `has_mouse_report_changed(new_report, old_report)` function to
 
 ### Custom Mouse Keycode
 
-In this example, a custom key is used to click the mouse and scroll 127 units vertically and horizontally, then undo all of that when released — because that's a totally useful function:
+In this example, a custom key is used to click the mouse and scroll 127 units vertically and horizontally, then undo all of that when released - because that's a totally useful function:
 
 ```c
 case MS_SPECIAL:

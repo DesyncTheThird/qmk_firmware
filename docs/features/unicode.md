@@ -60,7 +60,7 @@ To enable Basic Unicode, add the following to your `rules.mk`:
 UNICODE_ENABLE = yes
 ```
 
-You can then add `UC(c)` keycodes to your keymap, where `c` is the code point of the desired character (in hexadecimal — the `U+` prefix will not work). For example, `UC(0x40B)` will output [Ћ](https://unicode-table.com/en/040B/), and `UC(0x30C4)` will output [ツ](https://unicode-table.com/en/30C4).
+You can then add `UC(c)` keycodes to your keymap, where `c` is the code point of the desired character (in hexadecimal - the `U+` prefix will not work). For example, `UC(0x40B)` will output [Ћ](https://unicode-table.com/en/040B/), and `UC(0x30C4)` will output [ツ](https://unicode-table.com/en/30C4).
 
 === Unicode Map
 
@@ -107,7 +107,7 @@ Due to keycode size constraints, the indices `i` and `j` can each only refer to 
 
 === UCIS
 
-As with Unicode Map, the UCIS method also supports all possible code points, and requires the use of a mapping table. However, it works much differently — Unicode characters are input by replacing a typed mnemonic.
+As with Unicode Map, the UCIS method also supports all possible code points, and requires the use of a mapping table. However, it works much differently - Unicode characters are input by replacing a typed mnemonic.
 
 To enable UCIS, add the following to your keymap's `rules.mk`:
 

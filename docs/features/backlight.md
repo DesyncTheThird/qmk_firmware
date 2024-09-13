@@ -2,7 +2,7 @@
 
 Many keyboards support backlit keys by way of individual LEDs placed through or underneath the keyswitches. This feature is distinct from both the [RGB Underglow](rgblight) and [RGB Matrix](rgb_matrix) features, as it usually allows for only a single colour per switch, though you can obviously install multiple different single coloured LEDs on a keyboard.
 
-QMK is able to control the brightness of these LEDs by switching them on and off rapidly in a certain ratio — a technique known as *Pulse Width Modulation*, or PWM. By altering the duty cycle of the PWM signal, it creates the illusion of dimming.
+QMK is able to control the brightness of these LEDs by switching them on and off rapidly in a certain ratio - a technique known as *Pulse Width Modulation*, or PWM. By altering the duty cycle of the PWM signal, it creates the illusion of dimming.
 
 ## Usage {#usage}
 
@@ -35,8 +35,8 @@ Add the following to your `config.h`:
 |`BACKLIGHT_CAPS_LOCK`        |*Not defined*     |Enable Caps Lock indicator using backlight (for keyboards without dedicated LED)                                 |
 |`BACKLIGHT_BREATHING`        |*Not defined*     |Enable backlight breathing, if supported                                                                         |
 |`BREATHING_PERIOD`           |`6`               |The length of one backlight "breath" in seconds                                                                  |
-|`BACKLIGHT_ON_STATE`         |`1`               |The state of the backlight pin when the backlight is "on" — `1` for high, `0` for low                            |
-|`BACKLIGHT_LIMIT_VAL`        |`255`             |The maximum duty cycle of the backlight — `255` allows for full brightness; any lower will decrease the maximum  |
+|`BACKLIGHT_ON_STATE`         |`1`               |The state of the backlight pin when the backlight is "on" - `1` for high, `0` for low                            |
+|`BACKLIGHT_LIMIT_VAL`        |`255`             |The maximum duty cycle of the backlight - `255` allows for full brightness; any lower will decrease the maximum  |
 |`BACKLIGHT_DEFAULT_ON`       |`true`            |Enable backlight upon clearing the EEPROM                                                                        |
 |`BACKLIGHT_DEFAULT_BREATHING`|`false`           |Whether to enable backlight breathing upon clearing the EEPROM                                                   |
 |`BACKLIGHT_DEFAULT_LEVEL`    |`BACKLIGHT_LEVELS`|The default backlight level to use upon clearing the EEPROM                                                      |
@@ -178,7 +178,7 @@ The following `#define`s apply only to the `pwm` driver:
 |`BACKLIGHT_PWM_DRIVER` |`PWMD4`      |The PWM driver to use                                          |
 |`BACKLIGHT_PWM_CHANNEL`|`3`          |The PWM channel to use                                         |
 |`BACKLIGHT_PAL_MODE`   |`2`          |The pin alternative function to use                            |
-|`BACKLIGHT_PWM_PERIOD` |*Not defined*|The PWM period in counter ticks — Default is platform dependent|
+|`BACKLIGHT_PWM_PERIOD` |*Not defined*|The PWM period in counter ticks - Default is platform dependent|
 
 
 Refer to the ST datasheet for your particular MCU to determine these values. For example, these defaults are set up for pin `B8` on a Proton-C (STM32F303) using `TIM4_CH3` on AF2. Unless you are designing your own keyboard, you generally should not need to change them.
@@ -209,7 +209,7 @@ Since the MCU can only supply so much current to its GPIO pins, instead of power
 
 In this typical example, the backlight LEDs are all connected in parallel towards an N-channel MOSFET. Its gate pin is wired to one of the microcontroller's GPIO pins through a 470Ω resistor to avoid ringing.
 A pulldown resistor is also placed between the gate pin and ground to keep it at a defined state when it is not otherwise being driven by the MCU.
-The values of these resistors are not critical — see [this Electronics StackExchange question](https://electronics.stackexchange.com/q/68748) for more information.
+The values of these resistors are not critical - see [this Electronics StackExchange question](https://electronics.stackexchange.com/q/68748) for more information.
 
 ![Backlight example circuit](https://i.imgur.com/BmAvoUC.png)
 

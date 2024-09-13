@@ -15,7 +15,7 @@ const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
 };
 ```
 
-Note that the array indices are reversed — same as the matrix — and the values are of type `keypos_t`, which is `{col, row}`, and all values are zero-based. In the example above, `hand_swap_config[2][4]` (third row, fifth column) would return `{7, 2}` (third row, eighth column). Yes, this is confusing.
+Note that the array indices are reversed - same as the matrix - and the values are of type `keypos_t`, which is `{col, row}`, and all values are zero-based. In the example above, `hand_swap_config[2][4]` (third row, fifth column) would return `{7, 2}` (third row, eighth column). Yes, this is confusing.
 
 ## Swap Keycodes
 

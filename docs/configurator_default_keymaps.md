@@ -110,11 +110,11 @@ enum layer_names {
 };
 ```
 
-This works in C, but for Configurator, you *must* use the layer's numeric index — `MO(_FN)` would need to be `MO(2)` in the above example.
+This works in C, but for Configurator, you *must* use the layer's numeric index - `MO(_FN)` would need to be `MO(2)` in the above example.
 
 ### No support for custom code of any kind {#custom-code}
 
-Features that require adding functions to the `keymap.c` file — such as Tap Dance or Unicode — can not be compiled in Configurator **at all**. Even setting `TAP_DANCE_ENABLE = yes` in the `qmk_firmware` repository at the keyboard level will prevent Configurator from compiling **any** firmware for that keyboard. This is limited both by the API and the current spec of our JSON keymap format.
+Features that require adding functions to the `keymap.c` file - such as Tap Dance or Unicode - can not be compiled in Configurator **at all**. Even setting `TAP_DANCE_ENABLE = yes` in the `qmk_firmware` repository at the keyboard level will prevent Configurator from compiling **any** firmware for that keyboard. This is limited both by the API and the current spec of our JSON keymap format.
 
 ### Limited Support for Custom keycodes {#custom-keycodes}
 

@@ -75,7 +75,7 @@ This usage differs from that of keymap macros, which almost always use `XXXXXXX`
 To prevent user confusion, using `KC_NO` is preferred.
 :::
 
-The layout macro tells the Configurator that our keyboard has 17 keys, arranged in five rows of four columns each. Our switch positions are named `k<row><column>`, counting from 0. The names themselves actually don't matter as long as they match between the top half — which receives the keycodes from the keymap — and the bottom half — which designates where each key is in the matrix.
+The layout macro tells the Configurator that our keyboard has 17 keys, arranged in five rows of four columns each. Our switch positions are named `k<row><column>`, counting from 0. The names themselves actually don't matter as long as they match between the top half - which receives the keycodes from the keymap - and the bottom half - which designates where each key is in the matrix.
 
 To display our keyboard in a way that resembles the physical keyboard, we need to build a JSON file that tells the Configurator how to tie the physical locations and sizes of our keys to our switch matrix.
 
@@ -180,7 +180,7 @@ When a user selects the top-left key in the Configurator and assigns Num Lock to
 
 ## Issues and Hazards
 
-Currently, the Configurator does not support key rotation or non-rectangular key shapes like ISO Enter. Additionally, keys that are vertically-offset from their "row" — the arrow keys on 1800-layouts like the [TKC1800](https://github.com/qmk/qmk_firmware/tree/4ac48a61a66206beaf2fdd5f2939d8bbedd0004c/keyboards/tkc1800/) being a prominent example — confuse the KLE-to-JSON Converter, if not adjusted for by the contributor of the `info.json` file.
+Currently, the Configurator does not support key rotation or non-rectangular key shapes like ISO Enter. Additionally, keys that are vertically-offset from their "row" - the arrow keys on 1800-layouts like the [TKC1800](https://github.com/qmk/qmk_firmware/tree/4ac48a61a66206beaf2fdd5f2939d8bbedd0004c/keyboards/tkc1800/) being a prominent example - confuse the KLE-to-JSON Converter, if not adjusted for by the contributor of the `info.json` file.
 
 ### Workarounds
 

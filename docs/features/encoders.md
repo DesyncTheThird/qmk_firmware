@@ -56,7 +56,7 @@ If you are using different pinouts for the encoders on each half of a split keyb
 
 If the `_RIGHT` definitions aren't specified in your `config.h`, then the non-`_RIGHT` versions will be applied to both sides of the split.
 
-Additionally, if one side does not have an encoder, you can specify `{}` for the pins/resolution — for example, a split keyboard with only a right-side encoder:
+Additionally, if one side does not have an encoder, you can specify `{}` for the pins/resolution - for example, a split keyboard with only a right-side encoder:
 
 ```c
 #define ENCODER_A_PINS { }

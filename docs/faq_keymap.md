@@ -10,7 +10,7 @@ Keycodes are actually defined in [quantum/keycode.h](https://github.com/qmk/qmk_
 
 ## What Are the Default Keycodes?
 
-There are 3 standard keyboard layouts in use around the world — ANSI, ISO, and JIS. North America primarily uses ANSI, Europe and Africa primarily use ISO, and Japan uses JIS. Regions not mentioned typically use either ANSI or ISO. The keycodes corresponding to these layouts are shown here:
+There are 3 standard keyboard layouts in use around the world - ANSI, ISO, and JIS. North America primarily uses ANSI, Europe and Africa primarily use ISO, and Japan uses JIS. Regions not mentioned typically use either ANSI or ISO. The keycodes corresponding to these layouts are shown here:
 
 <!-- Source for this image: https://www.keyboard-layout-editor.com/#/gists/bf431647d1001cff5eff20ae55621e9a -->
 ![Keyboard Layout Image](https://i.imgur.com/5wsh5wM.png)
@@ -91,7 +91,7 @@ See the [Unicode](features/unicode) feature.
 
 ## `Fn` Key on macOS
 
-Unlike most Fn keys, the one on Apple keyboards actually has its own keycode... sort of. It takes the place of the sixth keycode in a basic 6KRO HID report — so an Apple keyboard is in fact only 5KRO.
+Unlike most Fn keys, the one on Apple keyboards actually has its own keycode... sort of. It takes the place of the sixth keycode in a basic 6KRO HID report - so an Apple keyboard is in fact only 5KRO.
 
 It is technically possible to get QMK to send this key. However, doing so requires modification of the report format to add the state of the Fn key.
 Even worse, it is not recognized unless the keyboard's VID and PID match that of a real Apple keyboard. The legal issues that official QMK support for this feature may create mean it is unlikely to happen.
@@ -122,7 +122,7 @@ https://pqrs.org/osx/karabiner/seil.html
 
 ## RN-42 Bluetooth Doesn't Work with Karabiner
 
-Karabiner — Keymapping tool on Mac OSX — ignores inputs from RN-42 module by default. You have to enable this option to make Karabiner working with your keyboard:
+Karabiner - Keymapping tool on Mac OSX - ignores inputs from RN-42 module by default. You have to enable this option to make Karabiner working with your keyboard:
 https://github.com/tekezo/Karabiner/issues/403#issuecomment-102559237
 
 See these for the detail of this problem.

@@ -28,7 +28,7 @@ Finally, unplug and replug the keyboard to make sure the new driver has been loa
 
 ## Recovering from Installation to Wrong Device
 
-If you find that you can no longer type with the keyboard, you may have accidentally replaced the driver for the keyboard itself instead of for the bootloader. This can happen when the keyboard is not in the bootloader mode. You can easily confirm this in Zadig — a healthy keyboard has the `HidUsb` driver installed on all of its interfaces:
+If you find that you can no longer type with the keyboard, you may have accidentally replaced the driver for the keyboard itself instead of for the bootloader. This can happen when the keyboard is not in the bootloader mode. You can easily confirm this in Zadig - a healthy keyboard has the `HidUsb` driver installed on all of its interfaces:
 
 ![A healthy keyboard as seen by Zadig](https://i.imgur.com/Hx0E5kC.png)
 
@@ -70,7 +70,7 @@ Be *extremely careful* when doing this! You could potentially uninstall the driv
 
 ## List of Known Bootloaders
 
-This is a list of known bootloader devices and their USB vendor and product IDs, as well as the correct driver to assign for flashing with QMK. Note that the usbser and HidUsb drivers are built in to Windows, and cannot be assigned with Zadig — if your device has an incorrect driver, you must use the Device Manager to uninstall it as described in the previous section.
+This is a list of known bootloader devices and their USB vendor and product IDs, as well as the correct driver to assign for flashing with QMK. Note that the usbser and HidUsb drivers are built in to Windows, and cannot be assigned with Zadig - if your device has an incorrect driver, you must use the Device Manager to uninstall it as described in the previous section.
 
 The device name here is the name that appears in Zadig, and may not be what the Device Manager or QMK Toolbox displays.
 
